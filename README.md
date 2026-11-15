@@ -25,4 +25,4 @@ app/src/test/                                        JVM unit tests
 app/src/androidTest/                                 Android instrumentation tests
 ```
 
-This repository has the same tracked application tree and initial commit as `MobileLab4`; compare the repositories before deciding whether both should remain in the portfolio.
+

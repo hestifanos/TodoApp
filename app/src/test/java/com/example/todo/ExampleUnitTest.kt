@@ -4,14 +4,18 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun createsTrimmedTaskSummaryWithOptionalDetails() {
+        assertEquals(
+            "Plan launch\nDue: Friday\nReview final checklist",
+            buildTaskSummary(" Plan launch ", " Friday ", " Review final checklist ")
+        )
+    }
+
+    @Test
+    fun rejectsBlankTitleAndOmitsEmptyDetails() {
+        assertNull(buildTaskSummary("  ", "", ""))
+        assertEquals("Plan launch", buildTaskSummary("Plan launch", "", ""))
     }
 }
